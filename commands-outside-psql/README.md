@@ -16,6 +16,10 @@ You can execute some commands outside the `psql` console.
 
 > Note: you can use the flag `--verbose` to see what's going on.
 
+## Restore Your Database
+
+    $ psql [db_name] --host [host_name] --username [username] < /path/to/dump_file
+
 ## Execute psql Commands Outside
 
 ### Login to psql
