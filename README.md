@@ -12,6 +12,7 @@ This cheat sheet is divided into four main sections:
 - [Commands Inside PSQL](commands-inside-psql/)
 - [Commands Outside PSQL](commands-outside-psql/)
 - [Utilities](utilities/)
+- [Troubleshooting](troubleshooting/)
 
 ## License
 
