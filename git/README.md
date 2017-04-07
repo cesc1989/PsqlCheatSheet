@@ -122,7 +122,7 @@ git log -SThatOneFile.php
 Copy a file from `branch` and put into staging.
 
 ```bash
-git checkout BRANCH path/to/file.ext
+git checkout [BRANCH] path/to/file.ext
 
 # Real Life Examples
 git checkout origin/featureBranch web/js/random.js
