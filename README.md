@@ -9,3 +9,4 @@ The idea behind this project is to collect and have easy access to a series of c
 - [PostgreSQL Cheat Sheets](postgresql/)
 - [Git Cheat Sheets](git/)
 - [Bash Cheat Sheets](bash/)
+- [MySQL Cheat Sheets](mysql/)
