@@ -1,6 +1,6 @@
 # Commands Inside PSQL
 
-`psql` console is where you can access and query databases. Before you query tables you'd need to know how to conect to a certain database, how to list them and more.
+`psql` console is where you can access and query databases. Before you query tables you'd need to know how to connect to a certain database, how to list them and more.
 
 Here are some commands:
 
@@ -12,4 +12,4 @@ Here are some commands:
 - List columns in [tablename]: `\d [tablename]`
 - Describe table: `\d+`
 
-
+Get a full list of available commands by typing `\?`
