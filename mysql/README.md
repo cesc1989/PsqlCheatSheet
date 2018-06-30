@@ -24,6 +24,32 @@ Reload privileges so the RDBMS knows about the user:
 FLUSH PRIVILEGES;
 ```
 
+### List users in MySQL Server
+
+Login as an administrative user to the `mysql` client:
+
+```bash
+$ mysql -u root -p
+```
+
+Then, you can list users with:
+
+```
+mysql> select * from mysql.user;
+```
+
+Notice this list all fields from the table. You can filter to get a better overview of the table:
+
+```
+mysql> select host, user, password from mysql.user;
+```
+
+You can always see what fields to list with:
+
+```
+mysql> desc mysql.user;
+```
+
 ### Backup & Recover Database
 
 Backup database:
@@ -97,3 +123,4 @@ OR option_name = 'home';
 
 1. [Create a New User in MySQL](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql)
 2. [Change MySQL server bind-address to access db outside Vagrant](https://stackoverflow.com/questions/10709334/how-to-connect-to-mysql-server-inside-virtualbox-vagrant#10794530)
+3. [List MySQL Users](https://alvinalexander.com/blog/post/mysql/show-users-i-ve-created-in-mysql-database)
