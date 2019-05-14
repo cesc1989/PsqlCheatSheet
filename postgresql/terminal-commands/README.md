@@ -1,26 +1,26 @@
-# Commands Outside PSQL
+# Terminal Commands
 
 You can execute some commands outside the `psql` console.
 
-## Backup Your Database
+## Backup Database
 
-### -f syntax
+### With -f syntax
 
     $ pg_dump -h [host_name] -U [user_name] -f /path/to/destination/filename [db_name]
 
 > Note: you can specify the port with the flag `--port [port number]`. Default port number is `5432`
 
-### -d syntax
+### With ∫-d syntax
 
     $ pg_dump -d [db_name] --host [host_name] --username [username] > /path/to/destination/filename
 
 > Note: you can use the flag `--verbose` to see what's going on.
 
-## Restore Your Database
+## Restore Database
 
     $ psql [db_name] --host [host_name] --username [username] < /path/to/dump_file
 
-### Restore with `pg_restore`
+### With `pg_restore`
 
 You need to restore a backup with `pg_restore` when it was created using `pg_dump`
 
@@ -28,20 +28,18 @@ You need to restore a backup with `pg_restore` when it was created using `pg_dum
 
 > Note: -O stands for *no owner*. The password prompt appears after submitting the command.
 
-## Execute psql Commands Outside
-
-### Login to psql
+## Login to psql
 
     $ psql --host [host_name] --username [username]
 
-### Login to Database
+## Login to Database
 
     $ psql [db_name] --host [host_name] --username [username]
 
-### Drop Database
+## Drop Database
 
     $ dropdb DBNAME --host [host_name] --username [username]
 
-### Create Database
+## Create Database
 
     $ createdb DBNAME --host [host_name] --username [username]

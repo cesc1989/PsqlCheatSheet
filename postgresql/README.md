@@ -9,8 +9,8 @@ List of commands for managing and using PostgreSQL.
 This cheat sheet is divided into four main sections:
 
 - [Queries](queries/)
-- [Commands Inside Interactive Terminal(psql)](commands-inside-psql/)
-- [Commands Outside Interactive Terminal(psql)](commands-outside-psql/)
+- [PSQL Commands](psql-commands/)
+- [Terminal Commands](terminal-commands/)
 - [Utilities](utilities/)
 - [Troubleshooting](troubleshooting/)
 
