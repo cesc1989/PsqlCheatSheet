@@ -14,6 +14,7 @@ This cheat sheet is divided into four main sections:
 - [Terminal Commands](terminal-commands/)
 - [Utilities](utilities/)
 - [Troubleshooting](troubleshooting/)
+- [Advanced](advanced/)
 
 ## Links
 
