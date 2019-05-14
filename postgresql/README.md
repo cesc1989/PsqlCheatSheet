@@ -8,6 +8,7 @@ List of commands for managing and using PostgreSQL.
 
 This cheat sheet is divided into four main sections:
 
+- [Basics](basics/)
 - [Queries](queries/)
 - [PSQL Commands](psql-commands/)
 - [Terminal Commands](terminal-commands/)
