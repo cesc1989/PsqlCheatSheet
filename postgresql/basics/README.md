@@ -8,6 +8,20 @@ Best way is using [Homebrew](https://brew.sh/)
 $ brew install postgresql
 ```
 
+## Uninstall PostgreSQL from macOS
+
+Also doable with Brew:
+
+```bash
+$ brew uninstall --force postgresql
+```
+
+Then make sure everything is gone, if needed:
+
+```bash
+$ rm -rf /usr/local/var/postgres
+```
+
 ## Create system user database to login to PSQL
 
 In order to use the interactive postgres console we need to have a user with password, impersonate postgres user(in the form of `sudo su postgres -c psql`).
