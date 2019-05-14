@@ -2,6 +2,20 @@
 
 This section covers some utility commands to do useful things with your database.
 
+## Start/stop PostgreSQL server in macOS
+
+### Start Manually
+
+```bash
+$ pg_ctl -D /usr/local/var/postgres start
+```
+
+### Sop Manually
+
+```bash
+$ pg_ctl -D /usr/local/var/postgres stop
+```
+
 ## Terminate Connections Using PostgreSQL Database
 
 Access the `psql` console
