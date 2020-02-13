@@ -2,16 +2,16 @@
 
 List of commands for managing and using PostgreSQL.
 
-`psql` commands are quite forgettable and I forget them a lot, that is why I decided to arrange them into a cheat sheet for easy referencing.
+`psql` commands are quite forgettable and I forget them a lot, that is why I decided to arrange them into a cheat sheet for reference.
 
 ## Contents
 
 This cheat sheet is divided into four main sections:
 
-- [Basics](basics/)
-- [Queries](queries/)
-- [PSQL Commands](psql-commands/)
-- [Terminal Commands](terminal-commands/)
+- Installation and config see: [Basics](basics/)
+- User/Role setup: [Queries](queries/)
+- Commands inside the `psql` shell or backslash(`\`) commands: [PSQL Commands](psql-commands/)
+- Dumping, restoring, and managing DBs from your sheel: [Terminal Commands](terminal-commands/)
 - [Utilities](utilities/)
 - [Troubleshooting](troubleshooting/)
 - [Advanced](advanced/)
