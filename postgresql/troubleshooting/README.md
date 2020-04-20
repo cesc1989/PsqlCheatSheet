@@ -20,6 +20,28 @@ Now, you can use `fixed_dump` to restore your database using `psql` command:
 
     $ psql [db_name] --host [host_name] --username [username] < /path/to/fixed_dump
 
+## dyld: Library not loaded
+
+Found this error after installing PostgreSQL in MacOS.
+
+```
+dyld: Library not loaded: /usr/local/opt/openssl/lib/libssl.1.0.0.dylib
+ Referenced from: /usr/local/Cellar/postgresql/11.4/lib/libpq.5.11.dylib
+ Reason: image not found
+[1]  7064 abort   psql
+```
+
+What worked in that specific situation was to reinstall Postgres but also run some Homebrew commands to make sure everything was alright.
+
+```
+$ brew uninstall --force postgresql
+$ rm -rf /usr/local/var/postgres
+$ brew doctor
+$ brew update # If there are errors, run any command Brew tells you to
+$ brew install postgresql
+$ brew services start postgresql
+$ createdb $(whoami)
+```
 
 [sto]: http://stackoverflow.com/a/4867690/1407371 "Stack Overflow"
 [dba]: http://dba.stackexchange.com/a/4781/69085 "DBA exchange"
