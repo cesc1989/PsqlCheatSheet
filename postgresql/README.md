@@ -11,7 +11,7 @@ This cheat sheet is divided into four main sections:
 - Installation and config see: [Basics](basics/)
 - User/Role setup: [Queries](queries/)
 - Commands inside the `psql` shell or backslash(`\`) commands: [PSQL Commands](psql-commands/)
-- Dumping, restoring, and managing DBs from your sheel: [Terminal Commands](terminal-commands/)
+- Dumping, restoring, and managing DBs from your shell/terminal: [Terminal Commands](terminal-commands/)
 - [Utilities](utilities/)
 - [Troubleshooting](troubleshooting/)
 - [Advanced](advanced/)
