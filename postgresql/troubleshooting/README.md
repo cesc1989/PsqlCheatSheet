@@ -43,5 +43,19 @@ $ brew services start postgresql
 $ createdb $(whoami)
 ```
 
+## PG::ConnectionBad or could not connect to server
+
+This error
+
+```
+could not connect to server: No such file or directory
+    Is the server running locally and accepting
+    connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+```
+
+If `brew services restart postgresql` doesn't work try `rm /usr/local/var/postgres/postmaster.pid`.
+
+Seen at [Stack Overflow](https://stackoverflow.com/a/18832331/1407371).
+
 [sto]: http://stackoverflow.com/a/4867690/1407371 "Stack Overflow"
 [dba]: http://dba.stackexchange.com/a/4781/69085 "DBA exchange"
