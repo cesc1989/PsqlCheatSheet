@@ -37,7 +37,7 @@ install_on_request: 86,856 (30 days), 228,361 (90 days), 713,206 (365 days)
 build_error: 0 (30 days)
 ```
 
-Notice instruction `brew servies start postgresql`
+Notice instruction `brew services start postgresql`
 
 ### Start Manually
 
