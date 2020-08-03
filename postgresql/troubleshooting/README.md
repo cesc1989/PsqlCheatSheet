@@ -4,7 +4,7 @@ This section covers solutions for some things that didn't work well when I tried
 
 ## invalid byte sequence for encoding “UTF8”
 
-When you backup a database with `pg_dump` command, as far as I know, you cannot<sup>[[1]][sto] [[2]][dba]</sup> restore that database from that file using `pg_restore`. The reason behind this is that the output file produced by `pg_dump` is not readable by `pg_restore`.
+When you backup a database with `pg_dump` command, as far as I know, you [cannot](http://stackoverflow.com/a/4867690/1407371) [restore](http://dba.stackexchange.com/a/4781/69085) that database from that file using `pg_restore`. The reason behind this is that the output file produced by `pg_dump` is not readable by `pg_restore`.
 
 You should restore a backup with `psql` command. However, sometimes you would stomp with error:
 
@@ -48,14 +48,24 @@ $ createdb $(whoami)
 This error
 
 ```
-could not connect to server: No such file or directory
-    Is the server running locally and accepting
-    connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+psql: error: could not connect to server: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
 ```
 
 If `brew services restart postgresql` doesn't work try `rm /usr/local/var/postgres/postmaster.pid`.
 
 Seen at [Stack Overflow](https://stackoverflow.com/a/18832331/1407371).
 
-[sto]: http://stackoverflow.com/a/4867690/1407371 "Stack Overflow"
-[dba]: http://dba.stackexchange.com/a/4781/69085 "DBA exchange"
+If above commands don't work, run `postgres -D /usr/local/var/postgres` to get an ouput of what's going on.
+
+Example:
+
+```
+2020-08-03 16:08:47.900 -05 [76016] FATAL:  database files are incompatible with server
+2020-08-03 16:08:47.900 -05 [76016] DETAIL:  The data directory was initialized by PostgreSQL version 11, which is not compatible with this version 12.3.
+```
+
+The second error message can be solved with `brew postgresql-upgrade-database`.
+
+Seen at [Stack Overflow](https://stackoverflow.com/a/48409221/1407371)
