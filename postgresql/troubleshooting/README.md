@@ -69,3 +69,35 @@ Example:
 The second error message can be solved with `brew postgresql-upgrade-database`.
 
 Seen at [Stack Overflow](https://stackoverflow.com/a/48409221/1407371)
+
+## Error after updating Postgres via Homebrew autoupdates command
+
+I ran some brew commands in order to install PHP and it updated several other packages. Few days later, I was about to create a record in a Rails app that uses the `pgcrypto` extension to generate UUIDs and it broke with this message:
+
+```
+PG::UndefinedFile: ERROR:  could not load library "/usr/local/lib/postgresql/pgcrypto.so": dlopen(/usr/local/lib/postgresql/pgcrypto.so, 10): Symbol not found: _gen_random_uuid
+```
+
+No results on Google and luckyly I read the last approach in previous section: `brew postgresql-upgrade-database`.
+
+Nothing was working. When I listed the extensions via `psql` it'd only list `plpgsql`. If I tried installing `pgcrypto`, it'd fail:
+
+```sql
+fquintero=# CREATE EXTENSION pgcrypto;
+ERROR:  unrecognized parameter "trusted" in file "/usr/local/share/postgresql/extension/pgcrypto.control"
+```
+
+So, already in disbelief and about to wipe out Postgres from the computer, I ran:
+```
+$ brew postgresql-upgrade-database
+
+(...)
+==> Summary
+🍺  /usr/local/Cellar/postgresql@12/12.5: 3,224 files, 37.6MB
+==> Upgrading postgresql data from 12 to 13...
+Stopping `postgresql`... (might take a while)
+==> Successfully stopped `postgresql` (label: homebrew.mxcl.postgresql)
+(...)
+```
+
+It did its magic and could install the extension and keep working happily.
