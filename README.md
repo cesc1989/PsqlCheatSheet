@@ -2,7 +2,7 @@
 
 > Based and forked from [Joshua Estes Cheat Sheets project](https://github.com/JoshuaEstes/CheatSheets)
 
-The idea behind this project is to collect and have easy access to a series of commands I'd rather forget.
+Collection of commands I forget too much.
 
 ## Table of Contents
 
